@@ -19,8 +19,9 @@ public class MegtakaritasiSzamla extends Szamla{
         this.kamat = kamat;
     }
 
+    @Override
     public boolean kivesz (int osszeg){
-        int kivon = getAktualisEgyenleg() - osszeg;
+        int kivon = super.getAktualisEgyenleg() - osszeg;
         if (kivon < 0){
             return false;
         }else{
