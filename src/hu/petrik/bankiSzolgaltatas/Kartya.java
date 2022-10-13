@@ -16,8 +16,13 @@ public class Kartya extends BankiSzolgaltatas{
     }
 
     public boolean vasarlas(int osszeg){
-        int kivon = szamla.getAktualisEgyenleg() - osszeg;
-        return kivon > 0;
+        int kivon = this.szamla.aktualisEgyenleg;
+        if(kivon >= osszeg){
+            this.szamla.aktualisEgyenleg -= osszeg;
+            return true;
+        }else{
+            return false;
+        }
     }
 
 

@@ -1,8 +1,10 @@
 package hu.petrik.bankiSzolgaltatas;
 
-public class Szamla extends BankiSzolgaltatas{
+public abstract class Szamla extends BankiSzolgaltatas{
 
     protected int aktualisEgyenleg;
+
+    public Szamla(Tulajdonos tulajdonos){ super(tulajdonos); }
 
     public int getAktualisEgyenleg(){
         return this.aktualisEgyenleg;
@@ -17,14 +19,10 @@ public class Szamla extends BankiSzolgaltatas{
     }
 
     public Kartya ujKartya(String kartyaszam){
-        Szamla sz = new Szamla(this.getTulajdonos());
-        Kartya k = new Kartya(this.getTulajdonos(),sz,kartyaszam);
+        Kartya k = new Kartya(this.getTulajdonos(),this, kartyaszam);
 
         return k;
     }
 
-    public Szamla(Tulajdonos tulajdonos) {
-        super(tulajdonos);
-    }
 
 }

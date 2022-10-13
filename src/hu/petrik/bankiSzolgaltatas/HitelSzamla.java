@@ -13,8 +13,16 @@ public class HitelSzamla extends Szamla {
         return hitelKeret;
     }
 
+    @Override
     public boolean kivesz(int osszeg){
-        return getHitelKeret() >= osszeg;
+        int kivon = super.getAktualisEgyenleg()-osszeg;
+
+        if(kivon >= 0 - this.hitelKeret){
+            super.aktualisEgyenleg -= osszeg;
+            return true;
+        }else{
+            return false;
+        }
     }
 
 }

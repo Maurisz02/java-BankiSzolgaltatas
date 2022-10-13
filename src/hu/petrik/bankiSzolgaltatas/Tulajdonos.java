@@ -4,7 +4,7 @@ public final class Tulajdonos {
 
     private String nev;
 
-    Tulajdonos(String nev){
+    public Tulajdonos(String nev){
         this.nev = nev;
     }
 
