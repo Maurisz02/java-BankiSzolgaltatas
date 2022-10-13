@@ -20,8 +20,12 @@ public class MegtakaritasiSzamla extends Szamla{
     }
 
     public boolean kivesz (int osszeg){
-        return false;
-        //TODO: megcsinalni,hogy az egyenleg ne legyen 0-nál kisebb
+        int kivon = getAktualisEgyenleg() - osszeg;
+        if (kivon < 0){
+            return false;
+        }else{
+            return true;
+        }
     }
 
     public void kamatJovairas(){
